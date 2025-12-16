@@ -7,10 +7,20 @@ AWS CLI configured
 Cloudflare Account (Token and Zone ID)
 
 ## Configuration
-Create terraform/terraform.tfvars with your Cloudflare credentials.
+Create `terraform/terraform.tfvars` with your Cloudflare credentials and notification email:
+
+```hcl
+# Required
 cloudflare_api_token = "YOUR_TOKEN"
 cloudflare_zone_id   = "YOUR_ZONE_ID"
-variable notification_email defaults to <EMAIL_ADDRESS>.
+notification_email   = "your-email@example.com"
+
+# Optional Overrides (defaults shown)
+# aws_region         = "sa-east-1"      
+# instance_type      = "t3.micro"       
+# vpc_cidr           = "192.168.0.0/16" 
+# public_subnet_cidr = "192.168.1.0/24"
+```
 
 ## Usage
 Navigate to the terraform directory.

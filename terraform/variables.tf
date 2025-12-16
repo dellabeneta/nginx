@@ -35,7 +35,6 @@ variable "instance_type" {
 variable "notification_email" {
   description = "Email para receber notificações do Terraform"
   type        = string
-  default     = "m.dellabeneta@gmail.com"
 }
 
 variable "cloudflare_api_token" {
