@@ -1,4 +1,3 @@
-# 4. Security Group
 resource "aws_security_group" "web_sg" {
   name        = "web-server-sg"
   description = "Permitir SSH e HTTP"
