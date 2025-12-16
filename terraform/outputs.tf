@@ -15,5 +15,5 @@ output "bucket_name" {
 
 output "website_url" {
   description = "URL completa de acesso ao site"
-  value       = "http://${cloudflare_record.web_dns.hostname}"
+  value       = "https://${cloudflare_record.web_dns.hostname}"
 }
