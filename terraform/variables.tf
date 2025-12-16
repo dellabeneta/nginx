@@ -38,4 +38,15 @@ variable "notification_email" {
   default     = "m.dellabeneta@gmail.com"
 }
 
+variable "cloudflare_api_token" {
+  description = "Token da API da Cloudflare com permissão de edição de DNS"
+  type        = string
+  sensitive   = true
+}
+
+variable "cloudflare_zone_id" {
+  description = "ID da Zona DNS na Cloudflare (Zone ID)"
+  type        = string
+}
+
 

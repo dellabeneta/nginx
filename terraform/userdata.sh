@@ -17,7 +17,12 @@ echo "Instalando htop e ncdu..."
 yum install htop ncdu -y
 
 echo "Baixando site do S3..."
-aws s3 sync s3://${bucket_name} /usr/share/nginx/html
+for i in {1..5}; do
+  aws s3 sync s3://${bucket_name} /usr/share/nginx/html && break
+  echo "Falha no sync, aguardando 10s... (Tentativa $i/5)"
+  sleep 10
+done
+
 chown -R nginx:nginx /usr/share/nginx/html
 chmod -R 755 /usr/share/nginx/html
 
