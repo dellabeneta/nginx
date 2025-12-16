@@ -25,11 +25,7 @@ resource "aws_instance" "web" {
     Name = "web-server"
   })
 
-  user_data = <<-EOF
-              #!/bin/bash
-              yum update -y
-              amazon-linux-extras install nginx1 -y
-              systemctl start nginx
-              systemctl enable nginx
-              EOF
+  user_data = templatefile("userdata.sh", {
+    bucket_name = aws_s3_bucket.app_bucket.id
+  })
 }

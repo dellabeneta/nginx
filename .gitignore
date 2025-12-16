@@ -22,3 +22,14 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+.infracost/pricing.gob
+.infracost/terraform_modules/manifest.json
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+terraform/.terraform.lock.hcl

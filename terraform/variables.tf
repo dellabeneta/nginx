@@ -29,7 +29,13 @@ variable "public_subnet_cidr" {
 variable "instance_type" {
   description = "O tipo de instância EC2"
   type        = string
-  default     = "t2.micro"
+  default     = "t3.micro"
+}
+
+variable "notification_email" {
+  description = "Email para receber notificações do Terraform"
+  type        = string
+  default     = "m.dellabeneta@gmail.com"
 }
 
 
